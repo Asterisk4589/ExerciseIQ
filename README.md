@@ -10,7 +10,8 @@ ExerciseIQ uses your webcam and MediaPipe's pose landmark model to analyse squat
 > Stand sideways to your camera (right side facing lens) and start squatting.
 
 ![ExerciseIQ Demo](demo.gif)
-<!-- Record a screen capture and add it here -->![Uploading exercise-ezgif.com-video-to-gif-converter.gif…]()
+<!-- Record a screen capture and add it here -->!<img width="800" height="450" alt="demo" src="https://github.com/user-attachments/assets/bcbfa827-03e6-44f9-9a68-cf066b18149f" />
+
 
 
 ---
