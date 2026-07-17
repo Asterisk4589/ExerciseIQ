@@ -25,3 +25,11 @@ DEPTH_THRESHOLD = 100
 # MediaPipe Pose Landmarker task settings
 MODEL_PATH = "pose_landmarker_full.task"
 MODEL_URL = "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/latest/pose_landmarker_full.task"
+
+# Biomechanics Engine Configuration
+BIOMECH_HISTORY_SIZE = 60         # Configurable history size (frames) for velocity/acceleration
+BIOMECH_SMOOTHING_WINDOW = 5      # Rolling average window size for joint angles smoothing
+BIOMECH_STABILITY_WINDOW = 30     # Rolling window size for computing stability/variance metrics
+BIOMECH_MIN_CONFIDENCE = 0.5      # Minimum joint confidence score threshold
+BIOMECH_SMOOTHNESS_NORM = 100.0   # Normalization scale for angular-acceleration → smoothness score
+BIOMECH_STABILITY_NORM = 10.0     # Normalization scale for torso-lean + center-X std → stability score
