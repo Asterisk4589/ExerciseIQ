@@ -33,3 +33,4 @@ BIOMECH_STABILITY_WINDOW = 30     # Rolling window size for computing stability/
 BIOMECH_MIN_CONFIDENCE = 0.5      # Minimum joint confidence score threshold
 BIOMECH_SMOOTHNESS_NORM = 100.0   # Normalization scale for angular-acceleration → smoothness score
 BIOMECH_STABILITY_NORM = 10.0     # Normalization scale for torso-lean + center-X std → stability score
+BIOMECH_ACTIVE_SPEED_THRESHOLD = 15.0  # Speed threshold (px/s) for time-under-tension accumulator

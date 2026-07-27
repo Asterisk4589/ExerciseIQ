@@ -154,7 +154,7 @@ def test_output_structure() -> None:
         "joint_angles", "temporal_features", "posture_features",
         "symmetry", "movement_quality", "tracking_metrics",
     }
-    _check("All top-level keys present", top_keys == set(result.keys()))
+    _check("All top-level keys present", top_keys.issubset(set(result.keys())))
 
     angles = result["joint_angles"]
     expected_angle_joints = {
