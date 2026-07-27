@@ -1,18 +1,9 @@
 # messages.py
 """
-Feedback messages for ExerciseIQ squat analysis session.
+Feedback messages compatibility shim for ExerciseIQ.
+Re-exports message pools from intelligence.feedback_generator.
 """
 
-GOOD_MESSAGES = [
-    "PERFECT REP! KEEP GOING!",
-    "THATS THE WAY!",
-    "STRONG FORM! ONE MORE!",
-    "YES! NAILED IT!",
-]
+from intelligence.feedback_generator import GOOD_MESSAGES, BAD_MESSAGES
 
-BAD_MESSAGES = [
-    "PUSH THOSE KNEES BACK!",
-    "HEELS DOWN, CHEST UP!",
-    "CONTROL THE DESCENT!",
-    "ALMOST! WATCH THOSE KNEES!",
-]
+__all__ = ["GOOD_MESSAGES", "BAD_MESSAGES"]

@@ -1,0 +1,170 @@
+3 month ROADMAP
+🚀 V1 (Current) — Foundation (Week 1-2) ✅
+✅ Refactor into layered architecture
+✅ Pose Detection
+✅ Biomechanics Engine
+⏳ Intelligence Layer
+⏳ Analytics Layer
+⏳ UI Refactor
+
+Goal: Clean architecture.
+
+🚀 V2 — Smart Exercise Analyzer (Week 3)
+Exercises
+Squat
+Push-up
+Plank
+Features
+Live feedback
+Rep counting
+Form analysis
+Quality score (0–100)
+
+Goal: Complete working application.
+
+🚀 V3 — Analytics Platform (Week 4)
+Dashboard
+Workout history
+Personal bests
+Progress graphs
+Tempo trends
+ROM trends
+Session comparison
+Database
+SQLite
+User profiles
+
+Goal: Turn it into software, not just a demo.
+
+🚀 V4 — Classical Machine Learning (Week 5)
+
+Collect hundreds/thousands of reps.
+
+Pipeline:
+
+Video
+      ↓
+MediaPipe
+      ↓
+Biomechanics
+      ↓
+40 Features
+      ↓
+Random Forest/XGBoost
+      ↓
+Form Classification
+
+Train models for:
+
+Good vs Bad Form
+Exercise Recognition
+Form Score Prediction
+
+Goal: Real ML integrated into the product.
+
+🚀 V5 — AI Personal Trainer (Week 6)
+
+Instead of:
+
+"Bad Rep"
+
+Generate:
+
+Rep Score: 82
+
+Problems:
+• Right knee drifting inward
+• Torso leaning forward
+• Fast descent
+
+Recommendation:
+Slow descent and widen stance slightly.
+
+Goal: Explainable AI.
+
+🚀 V6 — Adaptive Intelligence (Week 7)
+
+Instead of fixed thresholds:
+
+depth = 90
+
+Learn each user's:
+
+Mobility
+Flexibility
+ROM
+Body proportions
+
+The app adapts to the individual.
+
+Goal: Personalized coaching.
+
+🚀 V7 — Performance Science (Week 8)
+
+Compute:
+
+Fatigue Index
+Stability Score
+Movement Smoothness
+Power Estimate
+Balance Score
+Symmetry Score
+Consistency Score
+
+Like a sports science platform.
+
+🚀 V8 — Web Dashboard (Week 9)
+
+Build with:
+
+FastAPI
+React (or Next.js)
+SQLite/PostgreSQL
+
+Features:
+
+Login
+Workout history
+Analytics
+Charts
+Upload videos
+Compare sessions
+
+Goal: Full-stack AI application.
+
+🚀 V9 — Advanced Computer Vision (Week 10)
+
+Add:
+
+Multi-person detection
+Side-view detection
+Front-view detection
+Camera calibration
+Occlusion handling
+
+Improve robustness.
+
+🚀 V10 — Research-Level Features (Week 11)
+Injury risk estimation
+Fatigue prediction
+Workout replay
+Automatic exercise recognition
+Explainable AI
+🚀 V11 — Production Polish (Week 12)
+Documentation
+Beautiful README
+Architecture diagrams
+API docs
+UML diagrams
+Engineering
+Unit tests
+Integration tests
+CI/CD (GitHub Actions)
+Docker support
+Logging
+Configuration management
+Demo
+2–3 minute cinematic demo
+GIFs
+Screenshots
+Performance benchmarks

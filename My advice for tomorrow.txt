@@ -1,0 +1,390 @@
+My advice for tomorrow
+
+Don't touch OpenCV.
+
+Don't touch graphs.
+
+Don't touch the UI.
+
+Spend the entire session making the Intelligence layer clean:
+
+SquatAnalyzer
+RepCounter
+FeedbackEngine
+ScoreEngine
+
+Every exercise will reuse this.
+
+DAYS 5–6
+Feature Extraction
+
+This is where your project becomes interesting.
+
+Extract
+
+✅ angular velocity
+
+✅ angular acceleration
+
+✅ squat depth
+
+✅ body inclination
+
+✅ center position
+
+✅ left/right symmetry
+
+✅ movement speed
+
+✅ rep duration
+
+✅ pause duration
+
+✅ stance width
+
+Store them in a feature dictionary.
+
+DAYS 7–8
+Movement Quality Score
+
+Instead of
+
+GOOD
+
+BAD
+
+calculate
+
+Depth
+
+92
+
+Tempo
+
+78
+
+Balance
+
+88
+
+Stability
+
+94
+
+Mobility
+
+81
+
+Overall
+
+87/100
+
+Recruiters LOVE scores.
+
+DAYS 9–10
+Better UI
+
+Modern overlay.
+
+Ideas
+
+Progress circle
+
+Exercise timer
+
+Live score
+
+Joint angle cards
+
+Confidence %
+
+Animated colors
+
+Colored skeleton
+
+Mini dashboard
+
+Like something from a fitness smartwatch.
+
+DAYS 11–12
+Analytics
+
+After session
+
+Show
+
+Accuracy
+
+Depth trend
+
+Tempo trend
+
+Rep durations
+
+Bad reps timeline
+
+Joint angle graph
+
+
+Also
+
+Fastest rep
+
+Slowest rep
+
+Average depth
+
+Average speed
+
+DAYS 13–14
+Database
+
+Store every workout.
+
+SQLite.
+
+Session
+
+Date
+
+Exercise
+
+Score
+
+Duration
+
+Good reps
+
+Bad reps
+
+
+Now build
+
+History
+DAYS 15–16
+Exercise Recognition
+
+Instead of pressing
+
+SQUAT
+
+Automatically recognize
+
+Standing
+
+↓
+
+Squat
+
+↓
+
+Pushup
+
+↓
+
+Plank
+
+
+Even if only
+
+3 exercises.
+
+Huge wow factor.
+
+DAYS 17–18
+ML
+
+This is the important part.
+
+Right now
+
+if angle<90
+
+Replace some decisions with ML.
+
+Collect data.
+
+Good squat
+
+Bad squat
+
+
+Extract
+
+30 features.
+
+Train
+
+Random Forest
+
+or
+
+XGBoost.
+
+Now
+
+features
+
+↓
+
+classifier
+
+↓
+
+Good Form
+
+
+Now it's ACTUAL AI.
+
+DAY 19
+README
+
+Amazing README.
+
+Needs
+
+Architecture diagram
+
+GIF
+
+Screenshots
+
+Demo
+
+Features
+
+Installation
+
+Future Work
+
+Project Structure
+
+Performance
+
+Limitations
+
+Nobody does this.
+
+DAY 20
+Portfolio Polish
+
+Record
+
+Professional demo.
+
+Show
+
+Real person
+
+↓
+
+Live detection
+
+↓
+
+Dashboard
+
+↓
+
+Graphs
+
+↓
+
+Session report
+
+↓
+
+History
+
+↓
+
+GitHub
+
+This video matters almost as much as the project.
+
+Features I'd Prioritize
+
+Not all features are equal.
+
+S Tier ⭐⭐⭐⭐⭐
+Modular architecture
+Multi-exercise support (3 is enough)
+Movement quality score
+Session analytics
+Exercise history
+Better README
+Better UI
+A Tier ⭐⭐⭐⭐
+Velocity
+Symmetry
+Tempo
+ML classifier
+Dashboard
+B Tier ⭐⭐⭐
+Voice feedback
+Calories
+Leaderboard
+Themes
+C Tier ⭐⭐
+
+Random motivational quotes.
+
+No recruiter cares.
+
+The Secret Weapon
+
+This is what I would build if I were trying to get shortlisted.
+
+Every frame becomes
+
+Landmarks
+
+↓
+
+Feature Extraction
+
+↓
+
+Movement Engine
+
+↓
+
+Feedback Engine
+
+↓
+
+Analytics Engine
+
+↓
+
+Database
+
+↓
+
+Dashboard
+
+NOT
+
+Landmarks
+
+↓
+
+if angle < 90
+
+That single architectural change changes how people perceive the project.
+
+The Cherry on Top (The "Holy Sh*t" Feature)
+
+If you only add one thing beyond the roadmap, make it this:
+
+Workout Replay & Error Timeline
+
+At the end of a session, the user gets:
+
+A timeline of every rep.
+Click on Rep 6 → jumps to that exact moment in the recorded video.
+Overlay highlights the knees in red and displays: "Knees moved 9 cm beyond toes for 0.42 s."
+Side panel shows metrics for that rep (depth, tempo, symmetry, score).
+Export the session as a PDF report.
+
+This combines computer vision, analytics, software engineering, and polished UX into one feature. It's memorable, easy to demo in interviews, and much harder to dismiss as "just another MediaPipe project."
