@@ -5,6 +5,7 @@ Calculates coordinate mappings and 2D knee joint angles.
 """
 
 import numpy as np
+import config
 
 def calculate_angle(a, b, c):
     """
@@ -28,11 +29,17 @@ def calculate_angle(a, b, c):
 def get_landmark_coords(lm, idx, w, h):
     """
     Extracts the normalized landmark from MediaPipe and scales it to integer pixel coordinates.
+    Returns None if landmark visibility is below config.VISIBILITY_MIN.
+
     lm: The list of landmarks for a detected pose.
     idx: The MediaPipe index of the landmark.
     w: Frame width.
     h: Frame height.
-    Returns: A list [x, y] representing pixel coordinates.
+    Returns: A list [x, y] representing pixel coordinates, or None.
     """
     p = lm[idx]
+    vis_min = getattr(config, "VISIBILITY_MIN", 0.6)
+    if hasattr(p, "visibility") and p.visibility is not None:
+        if p.visibility < vis_min:
+            return None
     return [int(p.x * w), int(p.y * h)]

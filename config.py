@@ -5,22 +5,31 @@ These values can be tweaked by users to adjust model sensitivity.
 """
 
 # Pose smoothing buffer size (number of frames for moving average)
-SMOOTH = 5
+SMOOTH_FRAMES = 7
+SMOOTH = SMOOTH_FRAMES
 
-# Knee over toe check tolerance (pixels ahead of toe)
-TOLERANCE = 5
+# Landmark visibility threshold (minimum confidence required)
+VISIBILITY_MIN = 0.6
+
+# Knee over toe check tolerance (pixels ahead of toe line)
+TOLERANCE = 3
 
 # Duration (seconds) of bad form before displaying warning overlay
-BAD_FORM_THRESHOLD = 0.3
+BAD_FORM_SECS = 0.3
+BAD_FORM_THRESHOLD = BAD_FORM_SECS
 
 # Standing still duration (seconds) required to activate squat detection
 STILL_THRESHOLD = 1.0
 
 # Minimum duration (seconds) of a valid squat repetition to filter out jitter/noise
-MIN_REP_DURATION = 1.5
+MIN_REP_SECS = 1.5
+MIN_REP_DURATION = MIN_REP_SECS
 
 # Knee depth angle threshold (degrees) that must be passed to count a rep's depth
 DEPTH_THRESHOLD = 100
+
+# Standing knee angle threshold (degrees)
+STAND_THRESHOLD = 160
 
 # MediaPipe Pose Landmarker task settings
 MODEL_PATH = "pose_landmarker_full.task"
