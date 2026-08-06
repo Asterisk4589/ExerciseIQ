@@ -1,8 +1,13 @@
-# ExerciseIQ 🏋️
-> Real-time squat analyser using computer vision and pose estimation.
+# 🧠 ExerciseIQ
+### Real-Time Human Movement Analysis Platform
 
-ExerciseIQ uses your webcam and MediaPipe's pose landmark model to analyse squat form in real time — detecting knee alignment, counting reps, and giving motivational feedback as you train.
+> A modular Computer Vision and Biomechanics platform for intelligent exercise analysis, movement quality assessment, and real-time coaching feedback.
 
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Pose%20Estimation-orange)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 ---
 
 ## Demo
@@ -16,101 +21,304 @@ ExerciseIQ uses your webcam and MediaPipe's pose landmark model to analyse squat
 
 ---
 
-## How It Works
+## Overview
 
-1. **Pose Detection** — MediaPipe's `PoseLandmarker` model detects 33 body landmarks per frame
-2. **Angle Calculation** — Computes knee angle using dot product between hip→knee and ankle→knee vectors
-3. **Knee-Over-Toe Detection** — Draws a vertical reference line at the toe tip. If knee crosses this line for more than 0.3 seconds, flags bad form
-4. **Smoothing** — Rolling average over 5 frames eliminates jitter from pixel-level noise
-5. **Rep Counter** — Counts reps by tracking stage transitions: DOWN (angle < 90°) → UP (angle > 160°)
-6. **Form-Gated Counting** — Only counts a rep as "good" if knee stayed behind toe line throughout
+ExerciseIQ is a modular Human Movement Analysis system that combines **Computer Vision**, **Biomechanics**, and **Exercise Intelligence** to evaluate exercise quality in real time.
 
----
+Instead of acting as a simple repetition counter, ExerciseIQ extracts biomechanical features from human pose landmarks, analyzes movement quality, provides real-time coaching feedback, and generates post-session performance analytics.
 
-## Features
-
-- 🦵 Real-time knee angle display
-- 📏 Vertical toe reference line — visual boundary for knee travel
-- ✅ Good rep / ❌ Bad rep counter separated
-- ⏱️ 0.3s jitter filter — ignores momentary pixel fluctuation
-- 💬 Motivational feedback on every rep
-- 🟢 Green skeleton overlay with highlighted knee tracking dot
+The project is designed as a scalable software architecture where additional exercises can be integrated without modifying the core biomechanics engine.
 
 ---
 
-## Tech Stack
+## Motivation
 
-| Tool | Purpose |
-|------|---------|
-| Python 3.x | Core language |
-| OpenCV | Webcam capture and frame rendering |
-| MediaPipe | Pose landmark detection |
-| NumPy | Vector math for angle calculation |
+Most exercise tracking applications only count repetitions.
+
+ExerciseIQ aims to understand **how** an exercise is performed.
+
+The long-term vision is to build an AI-powered movement assessment platform capable of:
+
+- Exercise Quality Assessment
+- Human Motion Analysis
+- Personalized Coaching
+- Performance Analytics
+- Machine Learning-based Movement Scoring
+- Injury Risk Indicators
+- Long-term Progress Tracking
 
 ---
 
-## Setup
+# Architecture
 
-**1. Clone the repo**
-```bash
-git clone https://github.com/Asterisk4589/ExerciseIQ.git
-cd ExerciseIQ
 ```
 
-**2. Install dependencies**
-```bash
-pip install opencv-python mediapipe numpy
+Camera / Video Input
+│
+▼
+Pose Detection Layer
+(MediaPipe)
+│
+▼
+Biomechanics Engine
+│
+▼
+Exercise Intelligence
+│
+▼
+Analytics Engine
+│
+▼
+Visualization & Reports
+
 ```
 
-**3. Run**
-```bash
-python main.py
+The project follows a layered architecture to maximize modularity, maintainability, and scalability.
+
+---
+
+# Current Features
+
+### Pose Detection
+
+- Real-time pose estimation
+- Human skeletal landmark extraction
+- Joint localization
+- Landmark visualization
+
+### Biomechanics Engine
+
+- Joint angle computation
+- Angular velocity calculation
+- Range of Motion (ROM)
+- Movement phase detection
+- Exercise timing
+- Temporal feature extraction
+
+### Exercise Intelligence
+
+- Squat repetition counting
+- Exercise state detection
+- Form validation
+- Rule-based movement analysis
+- Real-time coaching feedback
+
+### Analytics
+
+- Session statistics
+- Rep quality tracking
+- Performance visualization
+- Knee angle timeline
+- Session report generation
+
+---
+
+# Current Project Structure
+
 ```
 
-The pose model (`pose_landmarker_full.task`) downloads automatically on first run (~30MB).
+ExerciseIQ/
+
+├── main.py
+
+├── config.py
+
+├── biomechanics.py
+
+├── pose/
+
+│ ├── pose_detector.py
+
+│ ├── landmarks.py
+
+│ └── utils.py
+
+├── intelligence/
+
+│ ├── squat_analyzer.py
+
+│ ├── rep_counter.py
+
+│ ├── feedback_engine.py
+
+│ └── score_engine.py
+
+├── analytics/
+
+│ ├── report_generator.py
+
+│ ├── graph_generator.py
+
+│ └── session.py
+
+├── ui/
+
+├── tests/
+
+└── assets/
+
+```
 
 ---
 
-## Usage
+# Technologies Used
 
-- Stand **sideways** to your camera — right knee facing the lens
-- Make sure your **full body is visible** from head to toe
-- Do squats — the system tracks form in real time
-- Press **Q** to quit and see your session summary in terminal
+### Languages
 
----
+- Python
 
-## Landmark Indices Used
+### Computer Vision
 
-| Body Part | MediaPipe Index |
-|-----------|----------------|
-| Right Hip | 24 |
-| Right Knee | 26 |
-| Right Ankle | 28 |
-| Right Toe | 32 |
+- OpenCV
+- MediaPipe
 
----
+### Scientific Computing
 
-## Roadmap
+- NumPy
 
-- [ ] Session summary screen on quit (good %, main issue detected)
-- [ ] Support for left-side camera view
-- [ ] Additional exercises — lunges, deadlifts
-- [ ] Angle timeline graph — visualise form breakdown per rep
-- [ ] DanceIQ mode — extend to dance movement analysis
+### Visualization
+
+- Matplotlib
+
+### Development
+
+- Git
+- GitHub
 
 ---
 
-## Why I Built This
+# Current Workflow
 
-Most people squat with bad form and don't know it. A trainer costs money. A mirror doesn't give feedback. This tool gives real-time, specific correction — "your knee is crossing your toe" — so anyone can self-correct without a coach.
+```
+
+Capture Video
+
+↓
+
+Pose Estimation
+
+↓
+
+Landmark Extraction
+
+↓
+
+Biomechanical Feature Computation
+
+↓
+
+Exercise Analysis
+
+↓
+
+Movement Quality Assessment
+
+↓
+
+Feedback Generation
+
+↓
+
+Session Analytics
+
+↓
+
+Performance Report
+
+```
 
 ---
 
-## Author
+# Roadmap
 
-**MJ** — CS Student, 3rd Year | [GitHub](https://github.com/Asterisk4589)
+## Phase 1 ✅
+
+- Modular architecture
+- Squat analysis
+- Biomechanics engine
+- Session analytics
+
+## Phase 2 🚧
+
+- Push-up analyzer
+- Lunge analyzer
+- Plank analyzer
+- Deadlift analyzer
+
+## Phase 3
+
+- Personalized exercise profiles
+- Adaptive feedback engine
+- Multi-exercise sessions
+
+## Phase 4
+
+- Machine Learning movement assessment
+- Automatic exercise recognition
+- Personalized AI coaching
+
+## Phase 5
+
+- Web dashboard
+- Mobile support
+- Cloud deployment
+- REST API
+- Performance history
+- User authentication
 
 ---
 
-*ExerciseIQ v0.1 — built in one day using MediaPipe and OpenCV*
+# Software Design Principles
+
+ExerciseIQ follows modern software engineering practices:
+
+- Modular Architecture
+- Separation of Concerns
+- Reusable Components
+- Layered Design
+- Extensible System Design
+- Maintainable Codebase
+- Scalable Exercise Framework
+
+---
+
+# Future Machine Learning Integration
+
+The current version uses rule-based biomechanical analysis.
+
+Future releases aim to incorporate supervised machine learning for:
+
+- Exercise quality prediction
+- Movement classification
+- Personalized performance scoring
+- Fatigue estimation
+- Intelligent coaching recommendations
+
+---
+
+# Why ExerciseIQ?
+
+Unlike traditional exercise trackers that only count repetitions, ExerciseIQ is designed as a **Human Movement Intelligence Platform** capable of understanding movement quality through Computer Vision and biomechanical analysis.
+
+The long-term objective is to build a scalable framework that supports multiple exercises, interpretable movement analytics, and AI-assisted coaching.
+
+---
+
+# Author
+
+**Maheep Singh**
+
+Computer Science Undergraduate
+
+Interested in:
+
+- Software Engineering
+- Computer Vision
+- Artificial Intelligence
+- Machine Learning
+- Human Movement Analysis
+- System Design
+
+---
+
+⭐ If you found this project interesting, consider giving it a star!
